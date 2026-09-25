@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: var(--font-serif), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-sans), "Plus Jakarta Sans", system-ui, sans-serif;
+  --color-forest: #1E2522;
+  --color-forest-dark: #141916;
+  --color-moss: #3E4D3E;
+  --color-moss-light: #526652;
+  --color-sage: #7E8C78;
+  --color-sage-soft: #A3B09D;
+  --color-alabaster: #F9F7F2;
+  --color-parchment: #F2EEE5;
+  --color-stone: #E4DFD3;
+  --color-earth-gold: #C59B58;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes marqueeLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marqueeRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: marqueeLeft 38s linear infinite;
+}
+
+.animate-marquee-right {
+  display: flex;
+  width: max-content;
+  animation: marqueeRight 38s linear infinite;
+}
+
+.animate-marquee-left:hover,
+.animate-marquee-right:hover {
+  animation-play-state: paused;
+}
+
+@keyframes lineReveal {
+  0% {
+    clip-path: inset(50% 50% 50% 50%);
+  }
+  40% {
+    clip-path: inset(49.5% 0% 49.5% 0%);
+  }
+  100% {
+    clip-path: inset(0% 0% 0% 0%);
+  }
+}
+
+.animate-line-reveal {
+  clip-path: inset(50% 50% 50% 50%);
+  animation: lineReveal 2.5s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
